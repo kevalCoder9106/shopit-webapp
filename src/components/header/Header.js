@@ -9,9 +9,9 @@ function Header() {
       {/* TODO
           DISPLAY ADDRESS
       */}
-      <a href='/' className='w-[10%] h-[30%] lg:h-[30%] flex flex-row justify-center items-end text-vsm text-white '>
+      <a href='/' className='w-[10%] h-[35%] lg:h-[35%] flex flex-row justify-center items-end text-vsm text-white '>
         <img src={process.env.PUBLIC_URL + '/location.png'} alt='error' className=' h-full'></img>
-        <h1 className='text-[50%] lg:text-[70%]'>Select your address</h1>
+        <h1 className='text-[5px] lg:text-[8px]'>Select your address</h1>
       </a>
 
       {/* 
