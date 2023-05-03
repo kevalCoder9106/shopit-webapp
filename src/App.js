@@ -5,6 +5,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './containers/home/HomePage';
 import Header from './components/header/Header';
 
+export { app, analytics} from './config/firebase_config'
+
+function setupLocalStorage(){
+  if (localStorage.getItem('posters') === null){
+    localStorage.setItem('posters', JSON.stringify(
+      {
+        list: []
+      }
+    ))
+  }
+}
+
+setupLocalStorage()
+
 function App() {
   return (
     <div className='root'>

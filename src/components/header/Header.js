@@ -3,7 +3,7 @@ import './Header.css'
 
 function Header() {
   return (
-    <div className='px-1 w-full h-header bg-dark-blue flex justify-center items-center'>
+    <div className='z-[10] px-1 w-full h-header bg-dark-blue flex justify-center items-center'>
       <a href={process.env.PUBLIC_URL + '/'} className='w-[8%] h-[40%] lg:h-[60%]'><img src={process.env.PUBLIC_URL + '/logo.png'} alt='error' className='h-full object-contain'></img></a>
       
       {/* TODO

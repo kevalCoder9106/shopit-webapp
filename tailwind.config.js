@@ -14,6 +14,7 @@ module.exports = {
       },
       height: {
         'header': '8%',
+        'body': '92%'
       },
       fontSize: {
         'vsm': '10px'
