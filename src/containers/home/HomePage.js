@@ -1,20 +1,27 @@
 import './HomePage.css'
 import Loading from '../../ui/Loading';
+import React from 'react';
+import Carousel from '../../ui/Carousel';
+import Categories from './Categories';
 
 function HomePage() {
+  const posters = ['posters/sale1.png', 'posters/sale2.png', 'posters/sale3.png']
 
   return (
-    <div className='w-full h-body bg-light-white'>
-      <div id='poster_area' className='z-[0] relative w-full h-[95%] flex justify-center items-center'>
-      <Loading />
-      <img src={process.env.PUBLIC_URL + '/posters/sale1.png'} className='absolute top-0 lg:h-full object-contain'/>
-        <div className='w-full mx-[50%]'>
-          <img src={process.env.PUBLIC_URL + 'left-arrow.png'} alt='error' className='absolute h-[2%] object-contain left-[5%] xl:left-[15%]'/>
-          <img src={process.env.PUBLIC_URL + 'right-arrow.png'} alt='error' className='absolute h-[2%] object-contain right-[5%]  lg:top-[none] xl:right-[15%]'/>
-        </div>
+    <div className='h-[88%]  w-full flex flex-col  justify-start items-center'>
+      <div className='max-w-[70%] '>
+        <Carousel>
+        {
+          posters.map((image, index) => {
+            return <img key={index} src={image} />
+          })
+        }
+        </Carousel>
       </div>
+
+      <Categories/>
     </div>
   )
-}
+};
 
 export default HomePage

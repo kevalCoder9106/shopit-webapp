@@ -8,12 +8,9 @@ import Header from './components/header/Header';
 export { app, analytics} from './config/firebase_config'
 
 function setupLocalStorage(){
+  
   if (localStorage.getItem('posters') === null){
-    localStorage.setItem('posters', JSON.stringify(
-      {
-        list: []
-      }
-    ))
+    localStorage.setItem("sample", null)
   }
 }
 

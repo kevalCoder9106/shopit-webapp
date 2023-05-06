@@ -8,6 +8,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,500;0,700;0,800;1,300;1,500&display=swap" rel="stylesheet"/>
+
   </React.StrictMode>
 );
 

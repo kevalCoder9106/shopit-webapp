@@ -1,55 +1,56 @@
-import React from 'react'
-import './Header.css'
+import React, { useState } from 'react'
+
+import Cart from './Cart'
+import SearchProduct from './SearchProduct'
+import SelectCategories from './SelectCategories'
+import Logo from './Logo'
+import InformationBar from './InformationBar'
+import Account from './Account'
+import { MdDehaze } from 'react-icons/md'
+import HeaderModel from './HeaderModel'
 
 function Header() {
+  const [isHeaderModelActivated,setHeaderModelActivated] = useState(false)
+
+  async function headerModelActivationHandler(activation_state){
+    if (activation_state === false){
+      await new Promise((res, rej) => {
+        // document.getElementById('header__model').classList.remove('animate__fadeInUp')
+        document.getElementById('header__model').classList.add('animate__fadeOutUp')
+
+        setTimeout(function disableButton(){
+          setHeaderModelActivated(activation_state)
+        }, 500)
+      })
+    }
+    else {
+      setHeaderModelActivated(activation_state)
+    }
+  }
+
   return (
-    <div className='z-[10] px-1 w-full h-header bg-dark-blue flex justify-center items-center'>
-      <a href={process.env.PUBLIC_URL + '/'} className='w-[8%] h-[40%] lg:h-[60%]'><img src={process.env.PUBLIC_URL + '/logo.png'} alt='error' className='h-full object-contain'></img></a>
-      
-      {/* TODO
-          DISPLAY ADDRESS
-      */}
-      <a href='/' className='w-[10%] h-[35%] lg:h-[35%] flex flex-row justify-center items-end text-vsm text-white '>
-        <img src={process.env.PUBLIC_URL + '/location.png'} alt='error' className=' h-full'></img>
-        <h1 className='text-[5px] lg:text-[8px]'>Select your address</h1>
-      </a>
+    <div className='z-10 sticky top-0 bg-white  w-full h-[12%] flex flex-col justify-center items-center'>
+      <InformationBar/>
 
-      {/* 
-        TODO
-        SEARCH PRODUCTS
-      */}
-
-      <div className='w-[60%] h-[50%] md:h-[70%] flex flex-row items-center'>
-        <select className='text-vsm w-[10%] h-full my-1 rounded-sm border-r-[none] mr-[-7px] outline-none'>
-          <option value='All'>All</option>
-        </select>
-        <input type='text' placeholder='Search' className='w-10/12 h-full rounded-sm mx-1 my-2 pl-4 text-vsm outline-none'/>
-        <button className='search-button w-[20%] sm:w-[15%] lg:w-[10%] xl:w-[7%]  h-full ml-[-20px] xl:ml-[-50px] border-l-[none]  bg-yellow rounded-sm flex items-center justify-center my-2
-        '>
-          <img src={process.env.PUBLIC_URL + '/search.png'} alt='error' className='h-1/3'></img>
-        </button>
+      <div className='w-full lg:w-[66%] h-[70%] hidden lg:flex justify-between flex-row items-center'>
+        <Logo/>
+        <SelectCategories/>
+        <SearchProduct/>
+        <Account/>
+        <Cart/>
       </div>
 
-      <div className='w-[8%] h-[50%] lg:h-[70%] flex flex-col justify-center items-center '>
-        <img src={process.env.PUBLIC_URL + '/cart.png'} alt='error' className='h-[70%]'/>
-        <h1 className='text-vsm text-white'>Cart</h1>
+      <div className='px-2 w-full lg:w-[66%] h-[70%] flex lg:hidden justify-between flex-row items-center'>
+        <Logo/>
+        <SearchProduct/>
+        <button 
+        onClick={
+          () => headerModelActivationHandler(!isHeaderModelActivated)
+        }
+        className='text-xl'><MdDehaze/></button>
       </div>
 
-      {/* 
-        TODO 
-
-        VIEW PROFILE or SIGN IN
-      */}
-      <a href='/' className='w-[8%] h-[60%] flex justify-center items-center'>
-        {/* 
-          TODO
-
-          SIGN IN or PROFILE MALE or PROFILE FEMALE 
-        */}
-        
-        {/* <img src={process.env.PUBLIC_URL + '/profile_male.png'} alt='error' className='h-full'/> */}
-        <h1 className='text-vsm text-blue-100'>Hello, sign in</h1>
-      </a>
+      { isHeaderModelActivated && <HeaderModel /> }
 
     </div>
   )

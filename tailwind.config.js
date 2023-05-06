@@ -22,6 +22,13 @@ module.exports = {
       screens: {
         '3xl': '1920px',
       },
+      fontFamily: {
+        'pacific': 'Pacifico',
+        'work_sans': 'Work Sans'
+      },
+      boxShadow: {
+        'inner-lg': 'shadow inset 3px 3px 11px black'
+      }
     },
   },
   plugins: [],
