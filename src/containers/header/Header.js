@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
-import Cart from './Cart'
-import SearchProduct from './SearchProduct'
-import SelectCategories from './SelectCategories'
-import Logo from './Logo'
-import InformationBar from './InformationBar'
-import Account from './Account'
+import Cart from '../../components/header/Cart'
+import SearchProduct from '../../components/header/SearchProduct'
+import SelectCategories from '../../components/header/SelectCategories'
+import Logo from '../../components/header/Logo'
+import InformationBar from '../../components/header/InformationBar'
+import Account from '../../components/header/Account'
 import { MdDehaze } from 'react-icons/md'
-import HeaderModel from './HeaderModel'
+import HeaderModel from '../../components/header/HeaderModel'
 
 function Header() {
   const [isHeaderModelActivated,setHeaderModelActivated] = useState(false)

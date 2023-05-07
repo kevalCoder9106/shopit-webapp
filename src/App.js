@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import HomePage from './containers/home/HomePage';
-import Header from './components/header/Header';
+import Header from './containers/header/Header';
 
 export { app, analytics} from './config/firebase_config'
 

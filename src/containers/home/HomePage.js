@@ -1,8 +1,7 @@
 import './HomePage.css'
-import Loading from '../../ui/Loading';
 import React from 'react';
 import Carousel from '../../ui/Carousel';
-import Categories from './Categories';
+import Categories from '../../components/home/Categories';
 
 function HomePage() {
   const posters = ['posters/sale1.png', 'posters/sale2.png', 'posters/sale3.png']
@@ -13,7 +12,7 @@ function HomePage() {
         <Carousel>
         {
           posters.map((image, index) => {
-            return <img key={index} src={image} />
+            return <img key={index} alt='error' src={image} />
           })
         }
         </Carousel>
