@@ -16,7 +16,7 @@ function Header() {
     if (activation_state === false){
       await new Promise((res, rej) => {
         // document.getElementById('header__model').classList.remove('animate__fadeInUp')
-        document.getElementById('header__model').classList.add('animate__fadeOutUp')
+        document.getElementById('header__model').classList.add('animate__fadeOutUpBig')
 
         setTimeout(function disableButton(){
           setHeaderModelActivated(activation_state)

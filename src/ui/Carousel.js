@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import { MdArrowBackIosNew, MdArrowForwardIos} from 'react-icons/md'
 import { useState } from 'react'
 
@@ -19,10 +19,10 @@ function Carousel({ children: posters }) {
 
     useEffect(() => {
         timeOut()
-    }, [currentSlide])
+    }, [currentSlide]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <div className='overflow-hidden relative h-auto'>
+        <div className='w-full overflow-hidden relative h-auto'>
             <div className='flex transition-transform ease-in-out duration-500' style={{transform: `translateX(-${currentSlide * 100}%)`}}>{posters}</div>
             <div className='absolute inset-0 top-[50%] h-[10%] flex items-center justify-between p-4 '>
                 <button onClick={prev} className='rounded-full bg-slate-200 bg-opacity-70 p-4 hover:bg-opacity-50'><MdArrowBackIosNew/></button>

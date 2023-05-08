@@ -28,6 +28,16 @@ module.exports = {
       },
       boxShadow: {
         'inner-lg': 'shadow inset 3px 3px 11px black'
+      },
+      keyframes: {
+        loading: {
+            '50%': {
+                opacity: .5
+            }
+        }
+      },
+      animation: {
+        'loading': 'loading 1s linear infinite'
       }
     },
   },

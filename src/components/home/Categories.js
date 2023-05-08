@@ -13,8 +13,8 @@ const categoriesPictures = [
 
 function Categories() {
     return (
-        <div className='w-full lg:w-[70%] font-work_sans  flex flex-col'>
-            <h1 className='text-3xl font-[600] pt-[5rem]'>Shop Our Best Categories</h1>
+        <div className='w-full font-work_sans p-4  flex flex-col'>
+            <h1 className='text-2xl md:text-3xl font-[600] pt-[5rem]'>Shop Our Best Categories</h1>
             <div className='overflow-auto custom_scroll flex flex-row py-10'>
                 {
                     categoriesPictures.map((picture, index) => {
